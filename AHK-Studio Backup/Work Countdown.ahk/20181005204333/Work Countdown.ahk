@@ -1,7 +1,7 @@
-﻿;MsgBox % FormatSeconds(305)  ; 7384 = 2 hours + 3 minutes + 4 seconds. It yields: 2:03:04
+;MsgBox % FormatSeconds(305)  ; 7384 = 2 hours + 3 minutes + 4 seconds. It yields: 2:03:04
 WinHide, To Do List
 
-Gui, Add, Text, x10 y3 w70 h20 , Geri Sayım:
+Gui, Add, Text, x10 y3 w70 h20 , Geri Say�m:
 Gui, Add, DateTime, x10 y25 wp hp vStartTime 1, HH:mm:ss ;time
 
 
@@ -25,7 +25,7 @@ seconds := aTime.1 * 3600 + aTime.2 * 60 + aTime.3
 
 global i
 i := seconds
-;InputBox, i, Geri Sayım, Kaç Saniye, , 90, 130
+;InputBox, i, Geri Say�m, Ka� Saniye, , 90, 130
 
 Gui, 1:Destroy
 
@@ -36,7 +36,9 @@ while(i > 0)
 	ToolTip, %a%, 25, 5, 1
 	i -= 1
 }
-
+ToolTipOff:
+WinShow, To Do List
+ExitApp
 
 FormatSeconds(NumberOfSeconds)  ; Convert the specified number of seconds to hh:mm:ss format.
 {
@@ -53,9 +55,7 @@ FormatSeconds(NumberOfSeconds)  ; Convert the specified number of seconds to hh:
 
 return
 
-
-
-#Esc:: ;windows ve esc tuşları geri sayımı sonlandırır
+Esc::
 ButtonCancel/Exit:
 GuiClose:
 ExitApp

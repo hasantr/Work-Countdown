@@ -53,9 +53,9 @@ FormatSeconds(NumberOfSeconds)  ; Convert the specified number of seconds to hh:
 
 return
 
+kısayol := #Esc
 
-
-#Esc:: ;windows ve esc tuşları geri sayımı sonlandırır
+kısayol:: ;windows ve esc tuşları geri sayımı sonlandırır
 ButtonCancel/Exit:
 GuiClose:
 ExitApp
