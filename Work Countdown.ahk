@@ -16,7 +16,6 @@ Gui, submit, nohide
 FormatTime, StartTime, %StartTime%, HH:mm:ss
 
 
-
 aTime := StrSplit(StartTime, ":")
 seconds := aTime.1 * 3600 + aTime.2 * 60 + aTime.3
 
